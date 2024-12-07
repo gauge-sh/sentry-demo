@@ -10,6 +10,9 @@ jobs:
   report:
     runs-on: ubuntu-22.04
     environment: tach-demo
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v4
 
@@ -18,7 +21,6 @@ jobs:
         with:
           python-version: 3.12
           check-latest: true
-
 
       - name: Install dependencies
         run: |
