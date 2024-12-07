@@ -10,15 +10,20 @@ jobs:
   report:
     runs-on: ubuntu-22.04
     environment: tach-demo
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.12
           check-latest: true
-
 
       - name: Install dependencies
         run: |
@@ -30,4 +35,6 @@ jobs:
           GAUGE_API_BASE_URL: ${{ secrets.GAUGE_API_BASE_URL }}
         run: |
           cd src
-          tach upload
+#          tach upload
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
