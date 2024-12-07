@@ -65,6 +65,10 @@ PIPELINE = setting(
     ),
 )
 
+from sentry_plugins.base import CorePluginMixin
+
+print(CorePluginMixin)
+
 logger = logging.getLogger("social_auth")
 
 
