@@ -21,6 +21,8 @@ from social_auth.backends import BaseOAuth2, OAuthBackend
 from social_auth.exceptions import AuthFailed
 from social_auth.utils import dsa_urlopen
 
+from src.sentry import _get_git_revision
+
 # GitHub configuration
 GITHUB_BASE_DOMAIN = getattr(settings, "GITHUB_BASE_DOMAIN", "github.com")
 GITHUB_API_DOMAIN = getattr(settings, "GITHUB_API_DOMAIN", "api.github.com")
@@ -38,6 +40,7 @@ class GithubBackend(OAuthBackend):
     name = "github"
     # Default extra data to store
     EXTRA_DATA = [("id", "id"), ("expires", "expires")]
+    git_revision = _get_git_revision(name)
 
     def _fetch_emails(self, access_token):
         """Fetch private emails from Github account"""
