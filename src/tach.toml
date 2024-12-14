@@ -35,13 +35,13 @@ depends_on = [
 [[modules]]
 path = "sentry_plugins"
 depends_on = [
-    { path = "sentry" },
+    { path = "sentry", deprecated = true },
 ]
 
 [[modules]]
 path = "social_auth"
 depends_on = [
-    { path = "sentry" },
+    { path = "sentry", deprecated = true },
 ]
 
 [[modules]]
