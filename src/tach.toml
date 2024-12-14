@@ -26,7 +26,7 @@ path = "sentry"
 depends_on = [
     { path = "bitfield" },
     { path = "django_picklefield" },
-    { path = "flagpole" },
+#    { path = "flagpole" },
     { path = "sentry_plugins" },
     { path = "social_auth" },
     { path = "sudo" },
@@ -51,7 +51,7 @@ depends_on = []
 [[interfaces]]
 expose = [
     ".*utils.*",
-    ".*integrations.*",
+#    ".*integrations.*",
     "utils.*"
 ]
 
