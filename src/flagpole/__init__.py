@@ -192,6 +192,7 @@ class Feature:
     def to_json_str(self) -> str:
         return orjson.dumps(self.to_dict()).decode()
 
+print()
 
 __all__ = [
     "Feature",
@@ -201,3 +202,6 @@ __all__ = [
     "Segment",
     "ConditionBase",
 ]
+
+# example dep error
+from sentry import features
