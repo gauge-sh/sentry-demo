@@ -4,9 +4,6 @@ from django.core.exceptions import ValidationError
 from django.db.models import Model, TextField
 from django.utils.encoding import smart_str
 
-from sentry.db.models.utils import Creator
-from sentry.utils import json
-
 
 class JSONField(TextField):
     """Simple JSON field that stores python structures as JSON strings

@@ -8,7 +8,6 @@ import requests
 from django.conf import settings
 from django.urls import reverse
 
-from sentry.utils.http import absolute_uri
 from social_auth.backends import BaseOAuth2, OAuthBackend
 from social_auth.utils import setting
 

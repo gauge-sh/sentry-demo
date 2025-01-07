@@ -2,7 +2,6 @@
 
 from django.db import migrations, models
 
-from sentry.new_migrations.migrations import CheckedMigration
 
 
 class Migration(CheckedMigration):
