@@ -12,9 +12,8 @@ from typing import Any
 
 from django import forms
 from django.contrib import auth
-from django.contrib.auth.base_user import AbstractBaseUser
-from django.contrib.auth.models import AnonymousUser
 from django.utils.translation import gettext_lazy as _
+from sentry.users.models.user import User
 
 
 class SudoForm(forms.Form):
@@ -24,7 +23,7 @@ class SudoForm(forms.Form):
 
     password = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
 
-    def __init__(self, user: AnonymousUser | AbstractBaseUser, *args: Any, **kwargs: Any) -> None:
+    def __init__(self, user: User, *args: Any, **kwargs: Any) -> None:
         self.user = user
         super().__init__(*args, **kwargs)
 
