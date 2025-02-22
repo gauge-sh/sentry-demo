@@ -11,7 +11,6 @@ stored in extra_data field, check OAuthBackend class for details on how to
 extend it.
 """
 
-from sentry.utils import json
 from social_auth.backends import BaseOAuth1, OAuthBackend
 from social_auth.utils import dsa_urlopen
 
