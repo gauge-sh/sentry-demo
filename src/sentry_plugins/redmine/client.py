@@ -1,6 +1,5 @@
 from sentry import http
-from sentry import http as http2
-print(http2)
+import sentry
 from sentry.utils import json
 
 
