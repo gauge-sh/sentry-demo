@@ -1,5 +1,4 @@
 from sentry import http
-import sentry
 from sentry.utils import json
 
 
