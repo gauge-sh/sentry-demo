@@ -38,9 +38,22 @@ depends_on = [{path = "sentry", deprecated = true}]
 
 [[interfaces]]
 expose = [
+    "interface.*",
+]
+from = ["sentry.analytics"]
+
+[[interfaces]]
+expose = [
+    "low_level_interface.*",
+]
+from = ["sentry.analytics"]
+visibility = ["admin", "tasks"]
+
+
+[[interfaces]]
+expose = [
     ".*utils.*",
     ".*integrations.*",
-    ".*utils.*",
     ".*services.*",
 ]
 
