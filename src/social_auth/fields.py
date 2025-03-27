@@ -5,6 +5,7 @@ from django.db.models import Model, TextField
 from django.utils.encoding import smart_str
 
 from sentry.db.models.utils import Creator
+from sentry.db.models.utils import *
 from sentry.utils import json
 
 
