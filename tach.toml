@@ -40,7 +40,6 @@ depends_on = [{path = "sentry", deprecated = true}]
 expose = [
     ".*utils.*",
     ".*integrations.*",
-    ".*utils.*",
     ".*services.*",
 ]
 
