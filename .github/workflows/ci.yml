@@ -29,11 +29,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install tach>=0.27.2
-      - name: tach report upload
-        env:
-          GAUGE_API_KEY: ${{ secrets.GAUGE_API_KEY }}
-          GAUGE_API_BASE_URL: ${{ secrets.GAUGE_API_BASE_URL }}
-        run: tach upload
+      # - name: tach report upload
+      #   env:
+      #     GAUGE_API_KEY: ${{ secrets.GAUGE_API_KEY }}
+      #     GAUGE_API_BASE_URL: ${{ secrets.GAUGE_API_BASE_URL }}
+      #   run: tach upload
       - uses: reviewdog/action-setup@e04ffabe3898a0af8d0fb1af00c188831c4b5893 # v1.3.2
         with:
           reviewdog_version: latest # Optional. [latest,nightly,v.X.Y.Z]
