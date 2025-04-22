@@ -7,8 +7,6 @@ from django.apps import apps
 from django.conf import settings
 from django.db import models
 
-from sentry.db.models import control_silo_model
-
 from .fields import JSONField
 from .utils import setting
 
