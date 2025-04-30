@@ -7,6 +7,7 @@ from typing import Any, TypedDict
 
 from sentry.hybridcloud.rpc import RpcModel
 from social_auth.backends import BaseAuth
+from social_auth.models import UserSocialAuth
 from social_auth.utils import get_backend, tokens
 
 
@@ -23,6 +24,9 @@ class RpcUserSocialAuth(RpcModel):
     @property
     def tokens(self) -> dict[str, Any]:
         return tokens(instance=self)
+
+    def auth(self) -> "UserSocialAuth":
+        return UserSocialAuth.objects.get(id=self.id).auth()
 
 
 class UserSocialAuthFilterArgs(TypedDict, total=False):
